@@ -1,0 +1,15 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+
+  run:
+
+    runs-on: self-hosted
+
+    steps:
+    - name: Start container
+      run: docker compose up -d
