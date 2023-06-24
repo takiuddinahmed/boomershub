@@ -11,5 +11,11 @@ jobs:
     runs-on: self-hosted
 
     steps:
-    - name: Start container
-      run: docker compose up -d
+    - name: Stop containers
+      run: docker compose down
+    
+    - name: Clone the code
+      run: cd ~/src && git pull origin main
+    
+    - name: Start containers
+      run: cd ~/src && docker compose up -d
