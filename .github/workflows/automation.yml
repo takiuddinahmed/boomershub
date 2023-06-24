@@ -2,22 +2,18 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
-
   run:
-
     runs-on: self-hosted
 
     steps:
-   
-    
-    - name: Clone the code
-      run: cd ~/boomershub && git pull origin main
-      
-    # - name: Stop containers
-    #   run: docker compose down
-    
-    - name: Start containers
-      run: cd ~/src && docker compose up -d
+      - name: Clone the code
+        run: cd ~/boomershub && git pull origin main
+
+      - name: Stop containers
+        run: cd ~/boomershub && docker compose down
+
+      - name: Start containers
+        run: cd ~/boomershub && docker compose up -d
