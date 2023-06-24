@@ -16,8 +16,8 @@ jobs:
     - name: Clone the code
       run: cd ~/boomershub && git pull origin main
       
-    - name: Stop containers
-      run: docker compose down
+    # - name: Stop containers
+    #   run: docker compose down
     
     - name: Start containers
       run: cd ~/src && docker compose up -d
